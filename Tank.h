@@ -3,7 +3,8 @@
 class Tank :
     public GameObject
 {
-	int hModel_;//モデルのハンドル
+	int hModel_;     //モデルのハンドル
+	XMVECTOR front_; //前ベクトル
 public:
 	//コンストラクタ
 	//引数：parent  親オブジェクト（SceneManager）
