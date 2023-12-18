@@ -1,15 +1,13 @@
 #pragma once
 #include "Engine/GameObject.h"
-class Ground :
+class Tank :
     public GameObject
 {
-
-	int hModel_; //地面のモデルを読むためのモデル番号（モデルのハンドル）
+	int hModel_;//モデルのハンドル
 public:
 	//コンストラクタ
 	//引数：parent  親オブジェクト（SceneManager）
-	Ground(GameObject* parent);
-	~Ground();
+	Tank(GameObject* parent);
 
 	//初期化
 	void Initialize() override;
@@ -22,5 +20,6 @@ public:
 
 	//開放
 	void Release() override;
+
 };
 

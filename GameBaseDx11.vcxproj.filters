@@ -114,7 +114,12 @@
     <ClCompile Include="PlayScene.cpp">
       <Filter>SCENES\PLAY</Filter>
     </ClCompile>
-    <ClCompile Include="Ground.cpp" />
+    <ClCompile Include="Ground.cpp">
+      <Filter>SCENES\PLAY</Filter>
+    </ClCompile>
+    <ClCompile Include="Tank.cpp">
+      <Filter>SCENES\PLAY</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Engine\BoxCollider.h">
@@ -196,7 +201,12 @@
     <ClInclude Include="PlayScene.h">
       <Filter>SCENES\PLAY</Filter>
     </ClInclude>
-    <ClInclude Include="Ground.h" />
+    <ClInclude Include="Ground.h">
+      <Filter>SCENES\PLAY</Filter>
+    </ClInclude>
+    <ClInclude Include="Tank.h">
+      <Filter>SCENES\PLAY</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <FxCompile Include="Assets\Shader\Simple2D.hlsl">
