@@ -5,7 +5,7 @@
 
 
 Tank::Tank(GameObject* parent)
-	:GameObject(parent, "Tank"), hModel_(-1), front_({ 0,0,1,0 })
+	:GameObject(parent, "Tank"), hModel_(-1),speed_(0.05),front_({0,0,1,0})
 {
 }
 
@@ -13,17 +13,34 @@ void Tank::Initialize()
 {
 	hModel_ = Model::Load("TankBody.fbx");
 	assert(hModel_ >= 0);
+	//speed_ = 0.05;
+	//front_ = XMVECTOR({ 0,0,1,0 });
 }
 
 void Tank::Update()
 {
-	XMMATRIX m = XMMatrixRotationY(XMConvertToRadians(this->transform_.rotate_.y));	//Ｙ軸で30度回転させる行列
-	XMVECTOR a = XMVector3TransformCoord(front_, m);	//ベクトルｖを行列ｍで変形
+
 	if (Input::IsKey(DIK_W))
 	{
-		XMFLOAT3 move;
-		XMStoreFloat3(&move, (a * 0.01f));
-		this->transform_.position_ = this->transform_.Float3Add(this->transform_.position_, move);
+		//回転行列を求める
+		XMMATRIX rotY = なんか;
+		//ベクトルの回転結果を求める
+		XMVECTOR rotVec = XMVector3TransformCoord(front_, rotY);
+
+
+		XMVECTOR move;
+		move = speed_ * rotVec;
+		XMVECTOR pos = XMLoadFloat3( &(transform_.position_) ); //XMVECTORに合わせる
+		pos = pos + move; //pos = pos + speed * front_
+		XMStoreFloat3(&(transform_.position_), pos);
+	}
+	if (Input::IsKey(DIK_S))
+	{
+		XMVECTOR move;
+		move = speed_ * front_;
+		XMVECTOR pos = XMLoadFloat3(&(transform_.position_));
+		pos = pos - move;
+		XMStoreFloat3(&(transform_.position_), pos);
 	}
 	if (Input::IsKey(DIK_A))
 	{
