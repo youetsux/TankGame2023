@@ -120,6 +120,9 @@
     <ClCompile Include="Tank.cpp">
       <Filter>SCENES\PLAY</Filter>
     </ClCompile>
+    <ClCompile Include="TankHead.cpp">
+      <Filter>SCENES\PLAY</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Engine\BoxCollider.h">
@@ -205,6 +208,9 @@
       <Filter>SCENES\PLAY</Filter>
     </ClInclude>
     <ClInclude Include="Tank.h">
+      <Filter>SCENES\PLAY</Filter>
+    </ClInclude>
+    <ClInclude Include="TankHead.h">
       <Filter>SCENES\PLAY</Filter>
     </ClInclude>
   </ItemGroup>
