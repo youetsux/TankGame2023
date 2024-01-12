@@ -47,6 +47,7 @@ void TankHead::Update()
 		pBullet->SetMoveDir(vmove);
 		pBullet->SetSpeed(0.1);
 	}	
+
 }
 
 void TankHead::Draw()

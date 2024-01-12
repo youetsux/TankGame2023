@@ -26,6 +26,9 @@ void Bullet::Update()
 	//transform_.position_->XMVECTOR pos;
 	//moveDir->XMVECTOR dir;
 	//pos = pos + bulletSpeed_ * dir;
+	yÀ•W‚ğ—‚Æ‚·
+		if (y‚ª‘Š“–‰º‚É—‚¿‚½‚ç)
+			KillMe();
 }
 
 void Bullet::Draw()
