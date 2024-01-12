@@ -30,5 +30,8 @@ public:
 	/// </summary>
 	/// <returns>int hModel:ÉÇÉfÉãî‘çÜ</returns>
 	int GetModelHandle() { return hModel_; }
+
+	//XMFLOAT3 GetCannonTopPos() { return Model::GetBonePosition(hModel_, "CannonPos"); }
+	//XMFLOAT3 GetCannonRootPos() { return Model::GetBonePosition(hModel_, "CannonRoot"); }
 };
 

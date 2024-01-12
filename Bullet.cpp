@@ -23,6 +23,9 @@ void Bullet::Update()
 	transform_.position_.x = transform_.position_.x + moveDir_.x * bulletSpeed_;
 	transform_.position_.y = transform_.position_.y + moveDir_.y * bulletSpeed_;
 	transform_.position_.z = transform_.position_.z + moveDir_.z * bulletSpeed_;
+	//transform_.position_->XMVECTOR pos;
+	//moveDir->XMVECTOR dir;
+	//pos = pos + bulletSpeed_ * dir;
 }
 
 void Bullet::Draw()

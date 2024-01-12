@@ -39,5 +39,21 @@ public:
 	{
 		return XMFLOAT3(a.x + b.x, a.y + b.y, a.z + b.z);
 	}
+	static XMFLOAT3 Float3Sub(XMFLOAT3 a, XMFLOAT3 b)
+	{
+		return XMFLOAT3(a.x - b.x, a.y - b.y, a.z - b.z);
+	}
+	static XMVECTOR Float3SubNormalize(XMFLOAT3 a, XMFLOAT3 b)
+	{
+		XMFLOAT3 c = XMFLOAT3(a.x - b.x, a.y - b.y, a.z - b.z);
+		return XMVector3Normalize(XMLoadFloat3(&c));
+	}
+	static XMFLOAT3 Vector3ToFloat3(XMVECTOR a)
+	{
+		XMFLOAT3 b;
+		XMStoreFloat3(&b, a);
+
+		return b;
+	}
 };
 
