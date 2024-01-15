@@ -3,6 +3,7 @@
 #include "Tank.h"
 #include "Enemy.h"
 #include "Engine/Text.h"
+#include "Engine/Camera.h"
 //#include "TankHead.h"
 
 PlayScene::PlayScene(GameObject* parent)
@@ -18,7 +19,7 @@ void PlayScene::Initialize()
 {
 
 	Instantiate<Ground>(this);
-	Instantiate<Tank>(this);
+	player = Instantiate<Tank>(this);
 	//Instantiate<TankHead>(this);
 	//敵をインスタンス化
 	Instantiate<Enemy>(this);
@@ -29,11 +30,18 @@ void PlayScene::Initialize()
 
 void PlayScene::Update()
 {
+	//タンクと一緒にカメラを動かすよ
+	Camera::SetTarget(player->GetPosition());
+	XMFLOAT3 camPos = player->GetPosition();
+	camPos.y += 8;
+	camPos.z -= 15;
+	Camera::SetPosition(camPos);
 }
 
 void PlayScene::Draw()
 {
 	pText->Draw(30, 30, "Yahoo!");
+
 }
 
 void PlayScene::Release()

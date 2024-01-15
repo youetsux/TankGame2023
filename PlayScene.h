@@ -2,11 +2,13 @@
 #include "Engine/GameObject.h"
 
 class Text;
+class Tank;
 
 class PlayScene :
     public GameObject
 {
 	Text* pText;
+	Tank* player;
 public:
 	//コンストラクタ
 //引数：parent  親オブジェクト（SceneManager）

@@ -12,7 +12,22 @@ void Enemy::Initialize()
 	assert(hModel_ >= 0);
 	//アニメーションのセット
 	//Model::
+	float x = (float)rand() / RAND_MAX;//0-1の乱数
+	x = 2.4 * x; // 0-2.4の乱数
+	transform_.position_.x = 25.0*(x - 1.2); //-1.2～1.2の乱数
+	float z = (float)rand() / RAND_MAX;//0-1の乱数
+	z = 2.4 * z; // 0-2.4の乱数
+	transform_.position_.z = 25.0*(z - 1.2); //-1.2～1.2の乱数
+	 
+	RayCastData data;
+	data.start = transform_.position_;
+	data.dir = XMFLOAT3({ 0,-1,0 });
+	Model::RayCast(hModel_, &data);
 
+	if (data.hit == true)
+	{
+		transform_.position_.y = -data.dist + 0.5f;
+	}
 }
 
 void Enemy::Update()
