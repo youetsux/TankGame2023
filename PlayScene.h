@@ -9,6 +9,7 @@ class PlayScene :
 {
 	Text* pText;
 	Tank* player;
+	int enemyNum;
 public:
 	//コンストラクタ
 //引数：parent  親オブジェクト（SceneManager）

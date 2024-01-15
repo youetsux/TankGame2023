@@ -22,7 +22,11 @@ void PlayScene::Initialize()
 	player = Instantiate<Tank>(this);
 	//Instantiate<TankHead>(this);
 	//敵をインスタンス化
-	Instantiate<Enemy>(this);
+	for(int i=0;i<30;i++)
+		Instantiate<Enemy>(this);
+
+	enemyNum = 30;
+	
 	pText = new Text;
 	pText->Initialize();
 
