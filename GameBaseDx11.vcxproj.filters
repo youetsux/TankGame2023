@@ -126,6 +126,9 @@
     <ClCompile Include="Bullet.cpp">
       <Filter>SCENES\PLAY</Filter>
     </ClCompile>
+    <ClCompile Include="Enemy.cpp">
+      <Filter>SCENES\PLAY</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Engine\BoxCollider.h">
@@ -217,6 +220,9 @@
       <Filter>SCENES\PLAY</Filter>
     </ClInclude>
     <ClInclude Include="Bullet.h">
+      <Filter>SCENES\PLAY</Filter>
+    </ClInclude>
+    <ClInclude Include="Enemy.h">
       <Filter>SCENES\PLAY</Filter>
     </ClInclude>
   </ItemGroup>
