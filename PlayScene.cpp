@@ -6,8 +6,14 @@
 #include "Engine/Camera.h"
 //#include "TankHead.h"
 
+
+namespace
+{
+	const int ENEMY_NUM{ 30 };
+}
+
 PlayScene::PlayScene(GameObject* parent)
-	:GameObject(parent, "PlayScene"),pText(nullptr)
+	:GameObject(parent, "PlayScene"), pText(nullptr)
 {
 }
 
@@ -22,11 +28,10 @@ void PlayScene::Initialize()
 	player = Instantiate<Tank>(this);
 	//Instantiate<TankHead>(this);
 	//敵をインスタンス化
-	for(int i=0;i<30;i++)
+	enemyNum = ENEMY_NUM;
+	for (int i = 0; i < enemyNum; i++)
 		Instantiate<Enemy>(this);
 
-	enemyNum = 30;
-	
 	pText = new Text;
 	pText->Initialize();
 
@@ -35,11 +40,11 @@ void PlayScene::Initialize()
 void PlayScene::Update()
 {
 	//タンクと一緒にカメラを動かすよ
-	Camera::SetTarget(player->GetPosition());
-	XMFLOAT3 camPos = player->GetPosition();
-	camPos.y += 8;
-	camPos.z -= 15;
-	Camera::SetPosition(camPos);
+	//Camera::SetTarget(player->GetPosition());
+	//XMFLOAT3 camPos = player->GetPosition();
+	//camPos.y += 8;
+	//camPos.z -= 15;
+	//Camera::SetPosition(camPos);
 }
 
 void PlayScene::Draw()

@@ -6,6 +6,7 @@ class Tank :
 	int hModel_;     //モデルのハンドル
 	XMVECTOR front_; //前ベクトル z+方向　大きさ1
 	float speed_;    //0.05 0.05*60 m/s
+	int camState_;	//カメラタイプの指定
 public:
 	//コンストラクタ
 	//引数：parent  親オブジェクト（SceneManager）
