@@ -20,6 +20,7 @@ void HUD::Update()
 
 void HUD::Draw()
 {
+	
 	Image::SetTransform(hHUD_, transform_);
 	Image::Draw(hHUD_);
 }
