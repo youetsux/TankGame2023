@@ -4,6 +4,7 @@
 #include "Enemy.h"
 #include "Engine/Text.h"
 #include "Engine/Camera.h"
+#include "HUD.h"
 //#include "TankHead.h"
 
 
@@ -35,6 +36,7 @@ void PlayScene::Initialize()
 	pText = new Text;
 	pText->Initialize();
 
+	Instantiate<HUD>(this);
 }
 
 void PlayScene::Update()

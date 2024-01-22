@@ -129,6 +129,9 @@
     <ClCompile Include="Enemy.cpp">
       <Filter>SCENES\PLAY</Filter>
     </ClCompile>
+    <ClCompile Include="HUD.cpp">
+      <Filter>SCENES\PLAY</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Engine\BoxCollider.h">
@@ -223,6 +226,9 @@
       <Filter>SCENES\PLAY</Filter>
     </ClInclude>
     <ClInclude Include="Enemy.h">
+      <Filter>SCENES\PLAY</Filter>
+    </ClInclude>
+    <ClInclude Include="HUD.h">
       <Filter>SCENES\PLAY</Filter>
     </ClInclude>
   </ItemGroup>
