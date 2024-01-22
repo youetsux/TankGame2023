@@ -17,7 +17,7 @@ void HUD::Initialize()
 	for (int i = 0; i < 3; i++)
 	{
 		Transform t;
-		t.position_ = { -0.52f + 0.1f*(float)i, 0.85f, 0.0f };
+		t.position_ = { -0.53f + 0.05f*(float)i, 0.85f, 0.0f };
 		tNumbers_.push_back(t);
 	}
 }
