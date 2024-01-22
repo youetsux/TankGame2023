@@ -11,7 +11,9 @@ public:
 	HUD(GameObject* parent);
 	int hHUD_;
 	int hNumbers_;
+	int hKinoko_;
 	Transform tHud_;
+	Transform tKinoko_;
 	std::vector<Transform> tNumbers_;
 	//‰Šú‰»
 	void Initialize() override;
