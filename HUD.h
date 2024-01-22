@@ -1,5 +1,7 @@
 #pragma once
 #include "Engine/GameObject.h"
+#include <vector>
+
 class HUD :
     public GameObject
 {
@@ -9,7 +11,8 @@ public:
 	HUD(GameObject* parent);
 	int hHUD_;
 	int hNumbers_;
-
+	Transform tHud_;
+	std::vector<Transform> tNumbers_;
 	//‰Šú‰»
 	void Initialize() override;
 

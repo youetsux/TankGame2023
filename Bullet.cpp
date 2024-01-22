@@ -1,6 +1,8 @@
 #include "Bullet.h"
 #include "Engine/Model.h"
 #include "Engine/SphereCollider.h"
+#include "PlayScene.h"
+#include "Engine/Debug.h"
 
 Bullet::Bullet(GameObject* parent)
 	:GameObject(parent, "Bullet"), hModel_(-1)
@@ -18,6 +20,8 @@ void Bullet::Initialize()
 
 	SphereCollider* collider = new SphereCollider(XMFLOAT3(0, 0, 0), 0.3);
 	AddCollider(collider);
+
+	playScene_ = (PlayScene*)GetParent();
 }
 
 void Bullet::Update()
@@ -49,4 +53,16 @@ void Bullet::Draw()
 
 void Bullet::Release()
 {
+}
+
+void Bullet::OnCollision(GameObject* pTarget)
+{
+	
+	if (pTarget->GetObjectName() == "Enemy")
+	{
+		playScene_->DescEnemy();
+		pTarget->KillMe();
+		Debug::Log(playScene_->GetObjectName());
+	}
+	this->KillMe();
 }

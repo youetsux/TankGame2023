@@ -26,6 +26,9 @@ public:
 
 	//ŠJ•ú
 	void Release() override;
+	void DescEnemy() { enemyNum--; }
+	bool IsEnemyLeft() { return enemyNum > 0; }
+	int  GetEnemyNum() { return enemyNum; }
 
 };
 

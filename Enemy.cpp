@@ -1,6 +1,7 @@
 #include "Enemy.h"
 #include "Engine/Model.h"
 #include "Ground.h"
+#include "Engine/SphereCollider.h"
 
 Enemy::Enemy(GameObject* parent)
 	:GameObject(parent, "Enemy"),hModel_(-1)
@@ -34,6 +35,8 @@ void Enemy::Initialize()
 	{
 		transform_.position_.y = -data.dist + 0.5;
 	}
+	SphereCollider* spc = new SphereCollider({ 0,0,0 }, 0.5);
+	AddCollider(spc);
 }
 
 void Enemy::Update()
