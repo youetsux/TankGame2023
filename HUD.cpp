@@ -58,7 +58,7 @@ void HUD::Draw()
 
 	for(int i = 0; i < 3; i++) {
 		int n = estr[i] - '0';
-		Image::SetRect(hNumbers_, 51.2 *(float)n, 0, 51.2, 60);
+		Image::SetRect(hNumbers_, 51.2 *(float)n, 0, 51.2, 128);
 		Image::SetTransform(hNumbers_, tNumbers_[i]);
 		Image::Draw(hNumbers_);
 	}
