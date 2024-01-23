@@ -2,10 +2,10 @@
 #include "Engine/Image.h"
 #include "PlayScene.h"
 
+
 HUD::HUD(GameObject* parent)
 	:GameObject(parent,"HUD"),hHUD_(-1),hNumbers_(-1)
 {
-
 }
 
 void HUD::Initialize()
@@ -25,6 +25,15 @@ void HUD::Initialize()
 	}
 }
 
+
+string HUD::ConstructEnemyNumberString()
+{
+	int enemies = ((PlayScene*)GetParent())->GetEnemyNum();
+	string enemyNumStr = std::to_string(enemies);
+	return enemyNumStr;
+}
+
+
 void HUD::Update()
 {
 	tHud_.position_ = { -0.6, 0.85, 0 };
@@ -34,19 +43,29 @@ void HUD::Update()
 	//ここでストリングに分割して、数字を作っていくぅ
 }
 
+
+
+
 void HUD::Draw()
 {
 	Image::SetTransform(hHUD_, tHud_);
 	Image::Draw(hHUD_);
+
+	string estr = ConstructEnemyNumberString();
+	if (estr.size() < 3)
+		estr = std::string(3 - estr.size(), '0') + estr;
+
+
 	for(int i = 0; i < 3; i++) {
-		Image::SetRect(hNumbers_, 51.2 *(float)i, 0, 51.2, 60);
+		int n = estr[i] - '0';
+		Image::SetRect(hNumbers_, 51.2 *(float)n, 0, 51.2, 60);
 		Image::SetTransform(hNumbers_, tNumbers_[i]);
 		Image::Draw(hNumbers_);
 	}
 	Image::SetTransform(hKinoko_, tKinoko_);
 	Image::Draw(hKinoko_);
-
 }
+
 
 void HUD::Release()
 {

@@ -1,10 +1,15 @@
 #pragma once
 #include "Engine/GameObject.h"
 #include <vector>
+#include <string>
+
+using std::string;
+
 
 class HUD :
     public GameObject
 {
+	string ConstructEnemyNumberString();
 public:
 	//コンストラクタ
 	//引数：parent  親オブジェクト（SceneManager）
